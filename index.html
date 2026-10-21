@@ -3,12 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardtry Entertainment Test</title>
+    <title>Hardtry Entertainment</title>
+    <style>
+        :root {
+            --bg: #f6f7fb;
+            --surface: #ffffff;
+            --text: #14161f;
+            --muted: #5c6275;
+            --border: #e3e6ef;
+            --accent: #6c4cf5;
+            --accent-hover: #5a3ae0;
+            --accent-2: #ff5c7a;
+            --shadow: 0 8px 30px rgba(20, 22, 31, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0e1018;
+                --surface: #171a26;
+                --text: #f1f2f7;
+                --muted: #9aa0b5;
+                --border: #262a3a;
+                --accent: #8b73ff;
+                --accent-hover: #a08cff;
+                --accent-2: #ff7a93;
+                --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 48px;
+        }
+
+        header h1 {
+            font-size: clamp(2.2rem, 6vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+
+        header p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover { transform: translateY(-4px); }
+
+        .card h3 {
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card .label {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 22px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #fff;
+            transition: background 0.2s ease;
+            margin-top: auto;
+        }
+
+        .btn:hover { background: var(--accent-hover); }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn.secondary:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .members {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 64px;
+        }
+
+        .members ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .members li {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            padding-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>The Hardtry Entertainment GitHub Pages site is officially working.</p>
-    <p>Members of the group: Felipe Rojas Marin, Andres Felipe Leon Sanchez</p>
-    <a href="./man-pac/">Play Our Game</a>   
+    <div class="container">
+        <header>
+            <h1>Hardtry Entertainment</h1>
+            <p>We welcome you to the main page for Hardtry Entertainment, here you can find our games and projects, please feel free to try anything you encounter</p>
+        </header>
+
+        <main>
+            <h2>Projects</h2>
+            <section class="projects">
+                <article class="card">
+                    <div>
+                        <div class="label">First project</div>
+                        <h3>man-pac</h3>
+                    </div>
+                    <a class="btn" href="./man-pac/">Play man-pac</a>
+                </article>
+
+                <article class="card">
+                    <div>
+                        <div class="label">Project</div>
+                        <h3>ballon-fight3d</h3>
+                    </div>
+                    <a class="btn secondary" href="https://hardtry-ballon-fight-remake.netlify.app/" target="_blank" rel="noopener noreferrer">Play ballon-fight3d</a>
+                </article>
+            </section>
+
+            <h2>Our members are</h2>
+            <section class="members">
+                <ul>
+                    <li>Felipe Rojas Marin</li>
+                    <li>Andres Felipe Leon Sanchez</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>&copy; Hardtry Entertainment</footer>
+    </div>
 </body>
 </html>
