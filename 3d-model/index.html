@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardtry Entertainment</title>
+    <style>
+        :root {
+            --bg: #f6f7fb;
+            --surface: #ffffff;
+            --text: #14161f;
+            --muted: #5c6275;
+            --border: #e3e6ef;
+            --accent: #6c4cf5;
+            --accent-hover: #5a3ae0;
+            --accent-2: #ff5c7a;
+            --shadow: 0 8px 30px rgba(20, 22, 31, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0e1018;
+                --surface: #171a26;
+                --text: #f1f2f7;
+                --muted: #9aa0b5;
+                --border: #262a3a;
+                --accent: #8b73ff;
+                --accent-hover: #a08cff;
+                --accent-2: #ff7a93;
+                --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 48px;
+        }
+
+        header h1 {
+            font-size: clamp(2.2rem, 6vw, 3.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+
+        header p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .video-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 32px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .actions {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 22px;
+            border-radius: 10px;
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hardtry Entertainment</h1>
+            <p>Third Assignment: 3D Modeling</p>
+        </header>
+
+        <main>
+            <h2>Video</h2>
+            <section class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace VIDEO_ID with your YouTube video ID -->
+                    <iframe
+                        src="https://www.youtube.com/embed/eP5IaFnWFoA"
+                        title="3D Modeling video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <div class="actions">
+                <a class="btn" href="../">&larr; Back to main page</a>
+            </div>
+        </main>
+
+        <footer>&copy; Hardtry Entertainment</footer>
+    </div>
+</body>
+</html>
