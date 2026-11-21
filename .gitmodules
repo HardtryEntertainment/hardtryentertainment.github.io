@@ -1,0 +1,3 @@
+[submodule "FogShader"]
+	path = FogShader
+	url = https://github.com/HardtryEntertainment/FogShader.git
